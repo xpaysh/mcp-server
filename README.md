@@ -12,7 +12,7 @@ Add to your MCP client config (Claude Desktop, Cursor, Windsurf, etc.):
 {
   "mcpServers": {
     "xpay": {
-      "url": "https://mcp.xpay.sh/sse"
+      "url": "https://mcp.xpay.sh/mcp"
     }
   }
 }
@@ -26,17 +26,17 @@ Each collection bundles related tools into a focused MCP server:
 
 | Collection | Endpoint | Tools | Providers |
 |---|---|---|---|
-| **All Tools** | `https://mcp.xpay.sh/sse` | 980+ | All 30+ |
-| **Lead Generation** | `https://lead-gen.mcp.xpay.sh/sse` | ~50 | Hunter, Apollo, Tomba, Sixtyfour, Fiber, Exa, Nyne |
-| **Competitive Intel** | `https://compete.mcp.xpay.sh/sse` | ~40 | Brand.dev, Coresignal, Keywords Everywhere, Exa, Firecrawl, Shofo |
-| **Content Research** | `https://content.mcp.xpay.sh/sse` | ~40 | Perplexity, Tavily, Semantic Scholar, FLUX, Ideogram, Recraft |
-| **Web Scraping** | `https://scraping.mcp.xpay.sh/sse` | ~35 | Firecrawl, Bright Data, Jina, Olostep, ScrapeGraph, Notte |
-| **Developer Tools** | `https://devtools.mcp.xpay.sh/sse` | ~30 | Context7, Code Runner, Python Execute, NPM Sentinel, PlantUML |
-| **Finance** | `https://finance.mcp.xpay.sh/sse` | 253 | Financial Modeling Prep, Alpha Vantage, AkShare, Polymarket |
-| **Media Studio** | `https://media.mcp.xpay.sh/sse` | ~25 | FLUX, Ideogram, Recraft, Stability AI, MiniMax, Kokoro |
-| **Social Media** | `https://social.mcp.xpay.sh/sse` | 96 | ScapeCreators, Shofo, YouTube |
-| **Academic Research** | `https://research.mcp.xpay.sh/sse` | ~30 | Semantic Scholar, Google Scholar, PubMed, arXiv |
-| **Marketing** | `https://marketing.mcp.xpay.sh/sse` | ~30 | Keywords Everywhere, Brand.dev, Exa, Tavily, Ideogram |
+| **All Tools** | `https://mcp.xpay.sh/mcp` | 980+ | All 30+ |
+| **Lead Generation** | `https://lead-gen.mcp.xpay.sh/mcp` | ~50 | Hunter, Apollo, Tomba, Sixtyfour, Fiber, Exa, Nyne |
+| **Competitive Intel** | `https://compete.mcp.xpay.sh/mcp` | ~40 | Brand.dev, Coresignal, Keywords Everywhere, Exa, Firecrawl, Shofo |
+| **Content Research** | `https://content.mcp.xpay.sh/mcp` | ~40 | Perplexity, Tavily, Semantic Scholar, FLUX, Ideogram, Recraft |
+| **Web Scraping** | `https://scraping.mcp.xpay.sh/mcp` | ~35 | Firecrawl, Bright Data, Jina, Olostep, ScrapeGraph, Notte |
+| **Developer Tools** | `https://devtools.mcp.xpay.sh/mcp` | ~30 | Context7, Code Runner, Python Execute, NPM Sentinel, PlantUML |
+| **Finance** | `https://finance.mcp.xpay.sh/mcp` | 253 | Financial Modeling Prep, Alpha Vantage, AkShare, Polymarket |
+| **Media Studio** | `https://media.mcp.xpay.sh/mcp` | ~25 | FLUX, Ideogram, Recraft, Stability AI, MiniMax, Kokoro |
+| **Social Media** | `https://social.mcp.xpay.sh/mcp` | 96 | ScapeCreators, Shofo, YouTube |
+| **Academic Research** | `https://research.mcp.xpay.sh/mcp` | ~30 | Semantic Scholar, Google Scholar, PubMed, arXiv |
+| **Marketing** | `https://marketing.mcp.xpay.sh/mcp` | ~30 | Keywords Everywhere, Brand.dev, Exa, Tavily, Ideogram |
 
 ## How It Works
 
