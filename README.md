@@ -1,56 +1,71 @@
 # xpay MCP Server
 
-980+ AI tools available as MCP servers. Pay $0.01/call in USDC via the [x402 protocol](https://x402.org) — no API keys, no subscriptions.
-
-Connect to one endpoint and get access to 30+ providers including Hunter, Firecrawl, Perplexity, Financial Modeling Prep, FLUX, and more.
+980+ AI tools available as MCP servers. Pay $0.01/call in USDC via the [x402 protocol](https://x402.org). One API key, 30+ providers — no individual provider accounts or subscriptions needed.
 
 ## Quick Start
 
-Add to your MCP client config (Claude Desktop, Cursor, Windsurf, etc.):
+### 1. Get your API key
+
+Sign up at [app.xpay.sh](https://app.xpay.sh) and create an API key. Add credits to your wallet (USDC on Base).
+
+### 2. Add to your MCP client
+
+**Claude Desktop / Cursor / Windsurf** — add to your MCP config:
 
 ```json
 {
   "mcpServers": {
     "xpay": {
-      "url": "https://mcp.xpay.sh/mcp"
+      "url": "https://mcp.xpay.sh/mcp?key=YOUR_API_KEY"
     }
   }
 }
 ```
 
-That's it. When you call a tool, the server responds with HTTP 402 + a payment invoice. Your client pays $0.01 USDC automatically and the tool executes.
+**Claude Code CLI:**
+
+```bash
+claude mcp add --transport http "xpay" "https://mcp.xpay.sh/mcp?key=YOUR_API_KEY"
+```
+
+Replace `YOUR_API_KEY` with your key from step 1.
+
+### 3. Use tools
+
+Your AI assistant will automatically discover all available tools. Each tool call costs $0.01 USDC, deducted from your wallet balance.
 
 ## Collection Servers
 
-Each collection bundles related tools into a focused MCP server:
+Instead of connecting to all 980+ tools, you can connect to a focused collection:
 
 | Collection | Endpoint | Tools | Providers |
 |---|---|---|---|
-| **All Tools** | `https://mcp.xpay.sh/mcp` | 980+ | All 30+ |
-| **Lead Generation** | `https://lead-gen.mcp.xpay.sh/mcp` | ~50 | Hunter, Apollo, Tomba, Sixtyfour, Fiber, Exa, Nyne |
-| **Competitive Intel** | `https://compete.mcp.xpay.sh/mcp` | ~40 | Brand.dev, Coresignal, Keywords Everywhere, Exa, Firecrawl, Shofo |
-| **Content Research** | `https://content.mcp.xpay.sh/mcp` | ~40 | Perplexity, Tavily, Semantic Scholar, FLUX, Ideogram, Recraft |
-| **Web Scraping** | `https://scraping.mcp.xpay.sh/mcp` | ~35 | Firecrawl, Bright Data, Jina, Olostep, ScrapeGraph, Notte |
-| **Developer Tools** | `https://devtools.mcp.xpay.sh/mcp` | ~30 | Context7, Code Runner, Python Execute, NPM Sentinel, PlantUML |
-| **Finance** | `https://finance.mcp.xpay.sh/mcp` | 253 | Financial Modeling Prep, Alpha Vantage, AkShare, Polymarket |
-| **Media Studio** | `https://media.mcp.xpay.sh/mcp` | ~25 | FLUX, Ideogram, Recraft, Stability AI, MiniMax, Kokoro |
-| **Social Media** | `https://social.mcp.xpay.sh/mcp` | 96 | ScapeCreators, Shofo, YouTube |
-| **Academic Research** | `https://research.mcp.xpay.sh/mcp` | ~30 | Semantic Scholar, Google Scholar, PubMed, arXiv |
-| **Marketing** | `https://marketing.mcp.xpay.sh/mcp` | ~30 | Keywords Everywhere, Brand.dev, Exa, Tavily, Ideogram |
+| **All Tools** | `https://mcp.xpay.sh/mcp?key=YOUR_API_KEY` | 980+ | All 30+ |
+| **Lead Generation** | `https://lead-gen.mcp.xpay.sh/mcp?key=YOUR_API_KEY` | ~50 | Hunter, Apollo, Tomba, Sixtyfour, Fiber, Exa, Nyne |
+| **Competitive Intel** | `https://compete.mcp.xpay.sh/mcp?key=YOUR_API_KEY` | ~40 | Brand.dev, Coresignal, Keywords Everywhere, Exa, Firecrawl, Shofo |
+| **Content Research** | `https://content.mcp.xpay.sh/mcp?key=YOUR_API_KEY` | ~40 | Perplexity, Tavily, Semantic Scholar, FLUX, Ideogram, Recraft |
+| **Web Scraping** | `https://scraping.mcp.xpay.sh/mcp?key=YOUR_API_KEY` | ~35 | Firecrawl, Bright Data, Jina, Olostep, ScrapeGraph, Notte |
+| **Developer Tools** | `https://devtools.mcp.xpay.sh/mcp?key=YOUR_API_KEY` | ~30 | Context7, Code Runner, Python Execute, NPM Sentinel, PlantUML |
+| **Finance** | `https://finance.mcp.xpay.sh/mcp?key=YOUR_API_KEY` | 253 | Financial Modeling Prep, Alpha Vantage, AkShare, Polymarket |
+| **Media Studio** | `https://media.mcp.xpay.sh/mcp?key=YOUR_API_KEY` | ~25 | FLUX, Ideogram, Recraft, Stability AI, MiniMax, Kokoro |
+| **Social Media** | `https://social.mcp.xpay.sh/mcp?key=YOUR_API_KEY` | 96 | ScapeCreators, Shofo, YouTube |
+| **Academic Research** | `https://research.mcp.xpay.sh/mcp?key=YOUR_API_KEY` | ~30 | Semantic Scholar, Google Scholar, PubMed, arXiv |
+| **Marketing** | `https://marketing.mcp.xpay.sh/mcp?key=YOUR_API_KEY` | ~30 | Keywords Everywhere, Brand.dev, Exa, Tavily, Ideogram |
 
 ## How It Works
 
-1. **Connect** — Add any endpoint above to your MCP client config
-2. **Call a tool** — Your AI assistant discovers and calls tools naturally
-3. **Auto-pay** — The server returns HTTP 402; your client pays $0.01 USDC on [Base](https://base.org)
-4. **Get results** — Tool executes and returns data instantly
+1. **Get a key** — Sign up at [app.xpay.sh](https://app.xpay.sh) and add USDC credits
+2. **Connect** — Add the endpoint URL (with your key) to any MCP client
+3. **Call tools** — Your AI assistant discovers and calls tools naturally
+4. **Auto-deduct** — Each call costs $0.01 USDC, deducted from your wallet balance
 
-No API key management. No provider accounts. No subscriptions. Just tools that work.
+No individual provider API keys. No separate accounts. One key for 30+ providers.
 
 ## Requirements
 
-- USDC on Base network ([get USDC on Coinbase](https://www.coinbase.com))
-- Any MCP-compatible client (Claude Desktop, Cursor, Windsurf, Cline, etc.)
+- **API key** from [app.xpay.sh](https://app.xpay.sh)
+- **USDC credits** in your xpay wallet ([add via Coinbase](https://www.coinbase.com))
+- **MCP client** — Claude Desktop, Cursor, Windsurf, Claude Code CLI, Cline, etc.
 
 ## How x402 Works
 
